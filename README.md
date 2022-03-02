@@ -19,3 +19,8 @@ An **Uncompleted** filter to view all the pending tasks.
 import { useState } from "react";
 import { useEffect } from "react";
 ```
+
+## Inspiration 
+
+https://www.instagram.com/developedbyed/
+
