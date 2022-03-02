@@ -3,13 +3,13 @@ import TodoList from "./TodoList";
 
 const Todo = (props) => {
   const deleteHandler = () => {
-    props.setTodos(props.todos.filter((el) => el.id !== props.currentTodo.id));
+    props.setTodos(props.todos.filter((el) => el.id !== props.todo.id));
   };
 
   const completeHandler = () => {
     props.setTodos(
       props.todos.map((el) => {
-        if (el.id === props.currentTodo.id) {
+        if (el.id === props.todo.id) {
           return {
             ...el,
             completed: !el.completed,
@@ -22,12 +22,8 @@ const Todo = (props) => {
 
   return (
     <div className="todo">
-      <li
-        className={`todo-item ${
-          props.currentTodo.completed ? "completed" : ""
-        }`}
-      >
-        {props.textContent}
+      <li className={`todo-item ${props.todo.completed ? "completed" : ""}`}>
+        {props.text}
       </li>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>

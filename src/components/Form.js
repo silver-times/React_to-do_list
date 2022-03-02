@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 const Form = (props) => {
   const inputTextHandler = (e) => {
-    props.receivedText(e.target.value);
+    props.setInputText(e.target.value);
   };
 
   const submitTodoHandler = (e) => {
     e.preventDefault();
+
+    if (props.inputText.length === 0) return;
 
     props.setTodos([
       ...props.todos,
@@ -16,6 +18,7 @@ const Form = (props) => {
         id: Math.random() * 1000,
       },
     ]);
+    props.setInputText("");
   };
 
   const statusHandler = (e) => {
@@ -24,7 +27,12 @@ const Form = (props) => {
 
   return (
     <form>
-      <input onChange={inputTextHandler} type="text" className="todo-input" />
+      <input
+        value={props.inputText}
+        onChange={inputTextHandler}
+        type="text"
+        className="todo-input"
+      />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>

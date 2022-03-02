@@ -7,10 +7,10 @@ const TodoList = (props) => {
       <ul className="todo-list">
         {props.filteredTodos.map((todo) => (
           <Todo
-            currentTodo={todo}
-            todos={props.myTodosList}
-            setTodos={props.mySetTodosList}
-            textContent={todo.text}
+            todo={todo}
+            todos={props.todos}
+            setTodos={props.setTodos}
+            text={todo.text}
             key={todo.id}
           />
         ))}
