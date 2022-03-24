@@ -20,7 +20,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 ```
 
-## Inspiration 
+## Here's the URL of the final landing page: 
+https://todolist-rs.netlify.app/
 
-https://www.instagram.com/developedbyed/
+
+
 
